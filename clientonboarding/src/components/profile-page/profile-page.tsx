@@ -1,4 +1,5 @@
 import { Component, h, Prop } from '@stencil/core';
+import Http from 'core';
 
 @Component({
   tag: 'profile-page',
@@ -9,10 +10,11 @@ import { Component, h, Prop } from '@stencil/core';
 export class ProfilePage {
   @Prop() profileId: string;
   @Prop() color: string = "Blue";
-
+  componentWillLoad(){
+    console.log("its loading")
+  }
   render() {
-    console.log(this.color);
-    console.log(this.profileId);
+    console.log(new Http().post())
     return (
       <div class="root">
         <div class="hero">
