@@ -10,11 +10,13 @@ import Http from 'core';
 export class ProfilePage {
   @Prop() profileId: string;
   @Prop() color: string = "Blue";
+
   componentWillLoad(){
     console.log("its loading")
   }
   render() {
     console.log(new Http().post())
+
     return (
       <div class="root">
         <div class="hero">

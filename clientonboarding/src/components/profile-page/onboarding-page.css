@@ -88,13 +88,13 @@ textarea {
 .item span {
   color: red;
 }
-.colums {
+.columns {
   display:flex;
   justify-content:space-between;
   flex-direction:row;
   flex-wrap:wrap;
 }
-.colums div {
+.columns div {
   width:48%;
 }
 input[type="date"]::-webkit-inner-spin-button {
@@ -189,4 +189,7 @@ button:hover {
     display:block;
     padding-bottom:5px;
   }
+}
+.message p {
+  color: green;
 }
