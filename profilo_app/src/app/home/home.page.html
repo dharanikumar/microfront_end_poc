@@ -9,11 +9,29 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title size="large">Home</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
-    <strong>Profile App </strong>
-  </div>
+  <ion-segment (ionChange)="segmentChanged($event)" value="list" >
+    <ion-segment-button value="list">
+      <ion-label>List</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="profile">
+      <ion-label>Onboard</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+  <ion-card *ngIf="!showProfilePage">
+    <ion-item>
+      <ion-icon name="pin" slot="start"></ion-icon>
+      <ion-label>ion-item in a card, icon left, button right</ion-label>
+      <ion-button fill="outline" slot="end">View</ion-button>
+    </ion-item>
+
+    <ion-card-content>
+      This is content, without any paragraph or header tags,
+      within an ion-card-content element.
+    </ion-card-content>
+  </ion-card>
+  <profile-page profile-id="1234455" *ngIf="showProfilePage"></profile-page>
 </ion-content>

@@ -6,7 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-
+  showProfilePage = false;
   constructor() {}
 
+  segmentChanged(ev: any) {
+    console.log('Segment changed', ev);
+    this.showProfilePage = (ev.detail.value === 'profile');
+  }
 }
