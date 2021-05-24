@@ -6,12 +6,22 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface OnboardingPage {
+        "color": string;
+        "profileId": string;
+    }
     interface ProfilePage {
         "color": string;
         "profileId": string;
     }
 }
 declare global {
+    interface HTMLOnboardingPageElement extends Components.OnboardingPage, HTMLStencilElement {
+    }
+    var HTMLOnboardingPageElement: {
+        prototype: HTMLOnboardingPageElement;
+        new (): HTMLOnboardingPageElement;
+    };
     interface HTMLProfilePageElement extends Components.ProfilePage, HTMLStencilElement {
     }
     var HTMLProfilePageElement: {
@@ -19,15 +29,21 @@ declare global {
         new (): HTMLProfilePageElement;
     };
     interface HTMLElementTagNameMap {
+        "onboarding-page": HTMLOnboardingPageElement;
         "profile-page": HTMLProfilePageElement;
     }
 }
 declare namespace LocalJSX {
+    interface OnboardingPage {
+        "color"?: string;
+        "profileId"?: string;
+    }
     interface ProfilePage {
         "color"?: string;
         "profileId"?: string;
     }
     interface IntrinsicElements {
+        "onboarding-page": OnboardingPage;
         "profile-page": ProfilePage;
     }
 }
@@ -35,6 +51,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "onboarding-page": LocalJSX.OnboardingPage & JSXBase.HTMLAttributes<HTMLOnboardingPageElement>;
             "profile-page": LocalJSX.ProfilePage & JSXBase.HTMLAttributes<HTMLProfilePageElement>;
         }
     }
