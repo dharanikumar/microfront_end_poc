@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-title>
-      Blank
+      Profilo
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -15,7 +15,7 @@
 
   <ion-segment (ionChange)="segmentChanged($event)" value="list" >
     <ion-segment-button value="list">
-      <ion-label>List</ion-label>
+      <ion-label>Clients</ion-label>
     </ion-segment-button>
     <ion-segment-button value="profile">
       <ion-label>Onboard</ion-label>
@@ -33,5 +33,5 @@
       within an ion-card-content element.
     </ion-card-content>
   </ion-card>
-  <profile-page profile-id="1234455" *ngIf="showProfilePage"></profile-page>
+  <onboarding-page profile-id="1234455" *ngIf="showProfilePage"></onboarding-page>
 </ion-content>
