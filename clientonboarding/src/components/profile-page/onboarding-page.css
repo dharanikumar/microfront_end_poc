@@ -193,4 +193,5 @@ button:hover {
 }
 .message p {
   color: green;
+  text-align: center;
 }

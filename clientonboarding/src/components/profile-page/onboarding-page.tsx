@@ -1,5 +1,5 @@
 import {Component, h, Prop, State} from '@stencil/core';
-
+import Http from 'core';
 @Component({
   tag: 'onboarding-page',
   styleUrl: 'onboarding-page.css',
@@ -11,16 +11,31 @@ export class ProfilePage {
   @Prop() color: string = "Blue";
   @State() showSuccessMessage: boolean = false;
   componentWillLoad() {
-    console.log("its loading")
   }
 
 
   formSubmit(event) {
     event.preventDefault();
-    this.showSuccessMessage = !this.showSuccessMessage;
+    new Http().post();
+    this.showSuccessMessage = true;
   }
 
   render() {
+    if(this.showSuccessMessage) {
+      return (
+        <div class="root">
+          <div class="content">
+            <div class="banner">
+              <h1>New Customer</h1>
+            </div>
+
+            <div class="message" >
+              <p>User created Successfully </p>
+            </div>
+          </div>
+        </div>
+      )
+    }
     return (
       <div class="root">
         <div class="content">
@@ -65,9 +80,6 @@ export class ProfilePage {
                 <label htmlFor="phone">Phone<span>*</span></label>
                 <input id="phone" type="tel"   name="phone" required/>
               </div>
-            </div>
-            <div class='message' >
-              {this.showSuccessMessage ? <p>User created Successfully </p>: <p></p>}
             </div>
             <div class="btn-block">
               <button type="submit" >Submit</button>
