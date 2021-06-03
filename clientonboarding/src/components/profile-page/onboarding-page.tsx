@@ -25,12 +25,8 @@ export class ProfilePage {
       return (
         <div class="root">
           <div class="content">
-            <div class="banner">
-              <h1>New Customer</h1>
-            </div>
-
             <div class="message" >
-              <p>User created Successfully </p>
+              <p>Customer created Successfully </p>
             </div>
           </div>
         </div>
@@ -40,9 +36,7 @@ export class ProfilePage {
       <div class="root">
         <div class="content">
           <form onSubmit={(e) => this.formSubmit(e)}>
-            <div class="banner">
               <h1>New Customer</h1>
-            </div>
             <div class="columns">
               <div class="item">
                 <label htmlFor="fname"> First Name<span>*</span></label>
