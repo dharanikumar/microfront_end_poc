@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar color="primary">
     <ion-title>
-      Profilo
+     Profilo 
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,7 +9,7 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Home</ion-title>
+      <ion-title size="large">Profilo</ion-title>
     </ion-toolbar>
   </ion-header>
 
@@ -21,17 +21,70 @@
       <ion-label>Onboard</ion-label>
     </ion-segment-button>
   </ion-segment>
-  <ion-card *ngIf="!showProfilePage">
-    <ion-item>
-      <ion-icon name="pin" slot="start"></ion-icon>
-      <ion-label>ion-item in a card, icon left, button right</ion-label>
-      <ion-button fill="outline" slot="end">View</ion-button>
-    </ion-item>
+  <ion-content *ngIf="!showProfilePage">
+    <ion-row class="ion-padding">
+      <ion-col>
+        <ion-label>TaskID</ion-label>
+      </ion-col>
+      <ion-col>
+        <ion-label>Assignment Date</ion-label>
+      </ion-col>
+      <ion-col>
+        <ion-label>Customer Information</ion-label>
+      </ion-col>
+      <ion-col>
+        <ion-label>Location</ion-label>
+      </ion-col>
+      <ion-col>
+        <ion-label>Address</ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-card>
+      <ion-badge>Pending</ion-badge>
+      <ion-card-content>
+        <ion-row>
+          <ion-col>
+            <ion-label>1232323</ion-label>
+          </ion-col>
+          <ion-col>
+            <ion-label>Jun 03, 2021</ion-label>
+          </ion-col>
+          <ion-col>
+            <ion-label>Ellawala, Ruveni</ion-label>
+          </ion-col>
+          <ion-col>
+            <ion-label>87107</ion-label>
+          </ion-col>
+          <ion-col>
+            <ion-label>228, Baker Street</ion-label>
+          </ion-col>
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
 
-    <ion-card-content>
-      This is content, without any paragraph or header tags,
-      within an ion-card-content element.
-    </ion-card-content>
-  </ion-card>
+    <ion-card>
+      <ion-badge>Completed</ion-badge>
+      <ion-card-content>
+        <ion-row>
+          <ion-col>
+            <ion-label>232323</ion-label>
+          </ion-col>
+          <ion-col>
+            <ion-label>Jun 04, 2021</ion-label>
+          </ion-col>
+          <ion-col>
+            <ion-label>Harold, Bell</ion-label>
+          </ion-col>
+          <ion-col>
+            <ion-label>87104</ion-label>
+          </ion-col>
+          <ion-col>
+            <ion-label>1234, ABC Street</ion-label>
+          </ion-col>
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+  </ion-content>
+
   <onboarding-page profile-id="1234455" *ngIf="showProfilePage"></onboarding-page>
 </ion-content>
